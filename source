@@ -1,0 +1,91 @@
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local title = Instance.new("TextLabel")
+local setspeed = Instance.new("TextButton")
+local speedsetter = Instance.new("TextBox")
+local ocbutton = Instance.new("TextButton")
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BorderSizePixel = 2
+Frame.Position = UDim2.new(0.309368193, 0, 0.22632423, 0)
+Frame.Size = UDim2.new(0, 139, 0, 211)
+
+title.Name = "title"
+title.Parent = Frame
+title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+title.Position = UDim2.new(0, 0, -0.00116393459, 0)
+title.Size = UDim2.new(0, 139, 0, 50)
+title.Font = Enum.Font.SourceSans
+title.Text = "SpeedSetter (stef)"
+title.TextColor3 = Color3.fromRGB(0, 0, 0)
+title.TextSize = 14.000
+
+setspeed.Name = "setspeed"
+setspeed.Parent = Frame
+setspeed.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+setspeed.Position = UDim2.new(0, 0, 0.760401011, 0)
+setspeed.Size = UDim2.new(0, 139, 0, 50)
+setspeed.Font = Enum.Font.SourceSans
+setspeed.Text = "Set Speed"
+setspeed.TextColor3 = Color3.fromRGB(0, 0, 0)
+setspeed.TextSize = 14.000
+
+speedsetter.Name = "speedsetter"
+speedsetter.Parent = Frame
+speedsetter.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+speedsetter.Position = UDim2.new(0, 0, 0.520383716, 0)
+speedsetter.Size = UDim2.new(0, 139, 0, 50)
+speedsetter.Font = Enum.Font.SourceSans
+speedsetter.Text = "(Set speed here)"
+speedsetter.TextColor3 = Color3.fromRGB(0, 0, 0)
+speedsetter.TextSize = 14.000
+
+ocbutton.Name = "ocbutton"
+ocbutton.Parent = ScreenGui
+ocbutton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ocbutton.Position = UDim2.new(0.0217864923, 0, 0.279293746, 0)
+ocbutton.Size = UDim2.new(0, 86, 0, 46)
+ocbutton.Font = Enum.Font.SourceSans
+ocbutton.Text = "Open/Close"
+ocbutton.TextColor3 = Color3.fromRGB(0, 0, 0)
+ocbutton.TextSize = 14.000
+
+local function KDPS_fake_script() 
+	local script = Instance.new('LocalScript', setspeed)
+
+	local setspeed = script.Parent
+	local speedsetter = script.Parent.Parent.speedsetter
+	
+	setspeed.MouseButton1Click:Connect(function()
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speedsetter.Text
+	end)
+	
+end
+coroutine.wrap(KDPS_fake_script)()
+local function VEWRSBZ_fake_script()  
+	local script = Instance.new('Script', ocbutton)
+
+	local frame = script.Parent.Parent.Frame
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		
+		if frame.Visible == true then
+			frame.Visible = false
+			else frame.Visible = true
+		end
+	end)
+end
+coroutine.wrap(VEWRSBZ_fake_script)()
+local function ULMB_fake_script()  
+	local script = Instance.new('LocalScript', ScreenGui)
+
+	frame = script.Parent.Frame
+	
+	frame.Draggable = true
+	frame.Active = true
+	frame.Selectable = true
+end
+coroutine.wrap(ULMB_fake_script)()
